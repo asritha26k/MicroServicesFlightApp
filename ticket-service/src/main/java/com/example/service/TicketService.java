@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.exception.ResourceNotFoundException;
@@ -31,6 +32,8 @@ public class TicketService {
 
 	@Autowired
 	FlightInterface flightInterface;
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
 
 	public ResponseEntity<String> bookTicketService(BookTicketRequest req) {
 		String pnr = UUID.randomUUID().toString().substring(0, 8);
@@ -39,6 +42,11 @@ public class TicketService {
 				.flightId(req.getFlightId()).booked(true).build();
 
 		ticketRepository.save(ticket);
+		String event = "Ticket booked for passengerId=" + req.getPassengerId() + ", flightId=" + req.getFlightId()
+				+ ", pnr=" + pnr;
+
+		kafkaTemplate.send("ticket-booked", event);
+
 		return ResponseEntity.ok(pnr);
 	}
 
