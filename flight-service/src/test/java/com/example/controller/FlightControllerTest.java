@@ -27,7 +27,7 @@ import com.example.service.FlightService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest(FlightController.class)
-public class FlightControllerTest {
+class FlightControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;

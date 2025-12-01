@@ -1,27 +1,59 @@
 
-[com.example.controller.FlightController#getByID(I)Lorg/springframework/http/ResponseEntity;¦
-›D:/Projects/eclipse_projects/ChubbWeeklyAssignmentsAndWorks/Week7/Week7Assignment/flight-service/src/main/java/com/example/controller/FlightController.java% %(&"1*€
-1&	 &(˜
-•
-&	 &('
-%0!com.example.service.FlightService"__id*Z
+com.example.service.FlightService#getByOriginAndDestinationService(Lcom/example/request/SearchRequest;)Lorg/springframework/http/ResponseEntity; 
+•D:/Projects/eclipse_projects/ChubbWeeklyAssignmentsAndWorks/Week7/Week7Assignment/flight-service/src/main/java/com/example/service/FlightService.java&% &(E"1*Ê	
+1' '(/›
+˜
+' '(/-
+%0'com.example.repository.FlightRepository"__id*W
 
-__unknown_file (>*<)
-'com.example.controller.FlightController"
-flightService˜•
-&	 &()-
-%1'org.springframework.http.ResponseEntity"\com.example.service.FlightService#getByIDService(I)Lorg/springframework/http/ResponseEntity;*E
+__unknown_file (;*9#
+!com.example.service.FlightService"
+flightRepositoryäá
+' '(q
+%1"xcom.example.repository.FlightRepository#findByOriginAndDestination(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*K
 
-__unknown_file ()
-'
-%0!com.example.service.FlightService*"
+__unknown_file (/
+-
+%0'com.example.repository.FlightRepository*"
 
 __unknown_file (
-""2getByIDService(I)";
-& &(*/
--
-%1'org.springframework.http.ResponseEntity: 
+""*"
 
-__unknown_file (
-""B+)
-'com.example.controller.FlightControllerH
+__unknown_file (
+""2@findByOriginAndDestination(Ljava/lang/String;Ljava/lang/String;)W
+U
+' '(r
+listOfFlightsjava.util.List"__id*"
+
+__unknown_file (
+
+%1a
+_
+(- ((:)
+%2#org.springframework.http.HttpStatus"__id*"
+
+__unknown_file (
+""db
+( ((-
+%3'org.springframework.http.ResponseEntity"'org.springframework.http.ResponseEntityÖ
+Ó
+(	 ((;
+%4"lorg.springframework.http.ResponseEntity#<init>(Ljava/lang/Object;Lorg/springframework/http/HttpStatusCode;)V*K
+
+__unknown_file (/
+-
+%3'org.springframework.http.ResponseEntity*=
+
+__unknown_file (!
+
+listOfFlightsjava.util.List*G
+
+__unknown_file (+
+)
+%2#org.springframework.http.HttpStatus";
+( ((</
+-
+%3'org.springframework.http.ResponseEntity:4
+&F &(W(
+req!com.example.request.SearchRequestB%#
+!com.example.service.FlightServiceH

@@ -22,8 +22,11 @@ import jakarta.validation.Valid;
 @RequestMapping("ticket")
 public class TicketController {
 
-	@Autowired
-	TicketService ticketService;
+	private final TicketService ticketService;
+
+	TicketController(@Autowired TicketService ticketService) {
+		this.ticketService = ticketService;
+	}
 
 	// we return pnr
 	@PostMapping("book")

@@ -1,0 +1,67 @@
+
+Ñcom.example.service.TicketService#getByPnrFallback(Ljava/lang/String;Ljava/lang/Throwable;)Lorg/springframework/http/ResponseEntity;†
+ïD:/Projects/eclipse_projects/ChubbWeeklyAssignmentsAndWorks/Week7/Week7Assignment/ticket-service/src/main/java/com/example/service/TicketService.javaM' M(7"1*ı
+1N N(N
+L
+N N(
+%0org.slf4j.Logger"__id*"
+
+__unknown_file (
+""†ù
+NB N(Q
+%1java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*7
+
+__unknown_file (
+
+exjava.lang.Throwable2getMessage()óî
+N N(R
+
+%2void"Norg.slf4j.Logger#warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V*4
+
+__unknown_file (
+
+%0org.slf4j.Logger*K
+
+__unknown_file (/-
++Fallback for getByPnrService for PNR {}: {}*5
+
+__unknown_file (
+
+pnrjava.lang.String*4
+
+__unknown_file (
+
+%1java.lang.String2<warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)a
+_
+O O(=)
+%3#org.springframework.http.HttpStatus"__id*"
+
+__unknown_file (
+""Î
+Ë
+O	 O(>9
+%43org.springframework.http.ResponseEntity$BodyBuilder"éorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
+
+__unknown_file (+")
+'org.springframework.http.ResponseEntity*G
+
+__unknown_file (+
+)
+%3#org.springframework.http.HttpStatus «
+O	 O(I-
+%5'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*W
+
+__unknown_file (;
+9
+%43org.springframework.http.ResponseEntity$BodyBuilder*"
+
+__unknown_file (
+""2body(Ljava/lang/Object;)";
+O O(J/
+-
+%5'org.springframework.http.ResponseEntity:#
+M8 M(C
+pnrjava.lang.String:%
+MD M(P
+exjava.lang.ThrowableB%#
+!com.example.service.TicketServiceH

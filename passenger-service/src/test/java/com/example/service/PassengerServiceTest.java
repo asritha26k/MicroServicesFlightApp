@@ -25,7 +25,7 @@ import com.example.request.PassengerDetailsRequest;
 import com.example.response.PassengerDetailsResponse;
 
 @ExtendWith(MockitoExtension.class)
-public class PassengerServiceTest {
+class PassengerServiceTest {
 	@InjectMocks
 	private PassengerService passengerService;
 
@@ -36,7 +36,7 @@ public class PassengerServiceTest {
 	private AddressRepository addressRepository;
 
 	@Test
-	public void testGetPassengerDetailsService_Success() throws Exception {
+	void testGetPassengerDetailsService_Success() throws Exception {
 		Passenger passenger = Passenger.builder().passengerId(1).name("John").email("john@gmail.com")
 				.phoneNumber("12345").build();
 
@@ -50,7 +50,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testGetPassengerDetailsService_NotFound() {
+	void testGetPassengerDetailsService_NotFound() {
 		Mockito.when(passengerRepository.findById(1)).thenReturn(Optional.empty());
 
 		assertThrows(ResourceNotFoundException.class, () -> {
@@ -59,7 +59,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testRegisterPassengerService() {
+	void testRegisterPassengerService() {
 
 		PassengerDetailsRequest req = PassengerDetailsRequest.builder().name("John").email("john@gmail.com")
 				.phoneNumber("12345").city("Hyd").houseNo("10-2").state("TS").build();
@@ -77,7 +77,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testDeletePassengerService_NotFound() {
+	void testDeletePassengerService_NotFound() {
 		Mockito.when(passengerRepository.findById(1)).thenReturn(Optional.empty());
 
 		assertThrows(ResourceNotFoundException.class, () -> {
@@ -86,7 +86,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testGetIdByEmailService_Success() throws Exception {
+	void testGetIdByEmailService_Success() throws Exception {
 
 		Passenger passenger = Passenger.builder().passengerId(15).email("abc@gmail.com").build();
 
@@ -99,7 +99,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testGetIdByEmailService_NotFound() {
+	void testGetIdByEmailService_NotFound() {
 
 		Mockito.when(passengerRepository.findByEmail("abc@gmail.com")).thenReturn(Optional.empty());
 
@@ -109,7 +109,7 @@ public class PassengerServiceTest {
 	}
 
 	@Test
-	public void testDeletePassengerService_Success() throws Exception {
+	void testDeletePassengerService_Success() throws Exception {
 
 		Passenger passenger = Passenger.builder().passengerId(1).name("John").email("john@gmail.com")
 				.phoneNumber("12345").build();

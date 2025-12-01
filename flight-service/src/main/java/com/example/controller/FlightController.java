@@ -2,7 +2,6 @@ package com.example.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +21,13 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("flight")
-public class FlightController {
+class FlightController {
 
-	@Autowired
-	FlightService flightService;
+	private final FlightService flightService;
+
+	public FlightController(FlightService flightService) {
+		this.flightService = flightService;
+	}
 
 	@PostMapping("register")
 	public ResponseEntity<Integer> registerFlightByID(@Valid @RequestBody FlightRequest req) {

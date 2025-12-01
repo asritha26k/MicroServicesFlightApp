@@ -24,7 +24,7 @@ import com.example.request.FlightRequest;
 import com.example.request.SearchRequest;
 
 @ExtendWith(MockitoExtension.class)
-public class FlightServiceTest {
+class FlightServiceTest {
 
 	@Mock
 	private FlightRepository flightRepository;

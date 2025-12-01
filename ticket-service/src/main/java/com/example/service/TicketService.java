@@ -3,6 +3,8 @@ package com.example.service;
 import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,16 +26,21 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 @Service
 public class TicketService {
 
-	@Autowired
-	TicketRepository ticketRepository;
+	private TicketRepository ticketRepository;
 
-	@Autowired
-	PassengerInterface passengerInterface;
-
-	@Autowired
-	FlightInterface flightInterface;
-	@Autowired
+	private PassengerInterface passengerInterface;
+	private FlightInterface flightInterface;
 	private KafkaTemplate<String, String> kafkaTemplate;
+
+	public TicketService(@Autowired TicketRepository ticketRepository, @Autowired PassengerInterface passengerInterface,
+			@Autowired FlightInterface flightInterface, @Autowired KafkaTemplate<String, String> kafkaTemplate) {
+		this.ticketRepository = ticketRepository;
+		this.passengerInterface = passengerInterface;
+		this.flightInterface = flightInterface;
+		this.kafkaTemplate = kafkaTemplate;
+	}
+
+	private static final Logger logger = LoggerFactory.getLogger(TicketService.class);
 
 	public ResponseEntity<String> bookTicketService(BookTicketRequest req) {
 		String pnr = UUID.randomUUID().toString().substring(0, 8);
@@ -51,7 +58,6 @@ public class TicketService {
 	}
 
 	@CircuitBreaker(name = "flightService", fallbackMethod = "getByPnrFallback")
-	// @TimeLimiter(name = "flightService")
 	public ResponseEntity<TicketResponse> getByPnrService(String pnr) {
 
 		Ticket ticket = ticketRepository.findByPnr(pnr)
@@ -69,12 +75,11 @@ public class TicketService {
 	}
 
 	public ResponseEntity<TicketResponse> getByPnrFallback(String pnr, Throwable ex) {
-		System.out.println("Fallback for getByPnrService: " + ex.getMessage());
+		logger.warn("Fallback for getByPnrService for PNR {}: {}", pnr, ex.getMessage());
 		return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(null);
 	}
 
 	@CircuitBreaker(name = "passengerService", fallbackMethod = "getTicketsByEmailFallback")
-	// @TimeLimiter(name = "passengerService")
 	public ResponseEntity<List<TicketResponse>> getTicketsByEmailService(String email) {
 
 		Integer passengerId = passengerInterface.getIdByEmail(email).getBody();
@@ -99,7 +104,7 @@ public class TicketService {
 	}
 
 	public ResponseEntity<List<TicketResponse>> getTicketsByEmailFallback(String email, Throwable ex) {
-		System.out.println("Fallback for getTicketsByEmailService: " + ex.getMessage());
+		logger.warn("Fallback for getTicketsByEmailService for email {}: {}", email, ex.getMessage());
 		return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(List.of());
 	}
 }

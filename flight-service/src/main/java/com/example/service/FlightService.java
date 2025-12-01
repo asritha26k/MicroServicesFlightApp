@@ -2,7 +2,6 @@ package com.example.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,8 +15,11 @@ import com.example.request.SearchRequest;
 @Service
 public class FlightService {
 
-	@Autowired
-	FlightRepository flightRepository;
+	private final FlightRepository flightRepository;
+
+	public FlightService(FlightRepository flightRepository) {
+		this.flightRepository = flightRepository;
+	}
 
 	public ResponseEntity<Integer> registerFlightByIDService(FlightRequest req) {
 		Flight flight = Flight.builder().airline(req.getAirline()).arrivalTime(req.getArrivalTime())
@@ -39,8 +41,8 @@ public class FlightService {
 	}
 
 	public ResponseEntity<String> deleteByIDService(int id) throws ResourceNotFoundException {
-		Flight flight = flightRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("flight by this id not found"));
+		flightRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("flight by this id not found"));
+
 		flightRepository.deleteById(id);
 		return new ResponseEntity<>("deleted", HttpStatus.OK);
 	}

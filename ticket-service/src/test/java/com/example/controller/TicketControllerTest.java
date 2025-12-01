@@ -30,7 +30,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 		org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration.class })
 @AutoConfigureMockMvc(addFilters = false)
 @TestPropertySource(properties = "spring.cloud.config.enabled=false")
-public class TicketControllerTest {
+class TicketControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;

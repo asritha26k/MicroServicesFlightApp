@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +20,11 @@ import jakarta.validation.Valid;
 @RestController
 public class PassengerController {
 
-	@Autowired
-	PassengerService passengerService;
+	private final PassengerService passengerService;
+
+	PassengerController(PassengerService passengerService) {
+		this.passengerService = passengerService;
+	}
 
 	// get request by id
 	@GetMapping("getByPassengerId/{id}")

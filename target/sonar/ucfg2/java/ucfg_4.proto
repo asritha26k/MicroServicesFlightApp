@@ -1,154 +1,56 @@
 
-¢com.example.GlobalExceptionHandler#handleValidationErrors(Lorg/springframework/web/bind/MethodArgumentNotValidException;)Lorg/springframework/http/ResponseEntity;¤
-™D:/Projects/eclipse_projects/ChubbWeeklyAssignmentsAndWorks/Week7/Week7Assignment/passenger-service/src/main/java/com/example/GlobalExceptionHandler.java, (B"startingBlock*„
-startingBlockB (fÜ
-Ù
- (9
-%13"
+‡com.example.GlobalExceptionHandler#notFound(Lcom/example/exception/ResourceNotFoundException;)Lorg/springframework/http/ResponseEntity;¤
+™D:/Projects/eclipse_projects/ChubbWeeklyAssignmentsAndWorks/Week7/Week7Assignment/passenger-service/src/main/java/com/example/GlobalExceptionHandler.java, (4"startingBlock*æ
+startingBlock4 (RÎ
+Ë
+ (3
+%3"
 __annotate*X
 
 __unknown_file (<:
-8org.springframework.web.bind.annotation.ExceptionHandler*`
+8org.springframework.web.bind.annotation.ExceptionHandler*S
 
-__unknown_file (D
-B
-ex<org.springframework.web.bind.MethodArgumentNotValidException„
-
-c (eB
-ex<org.springframework.web.bind.MethodArgumentNotValidException"__annotation*#
+__unknown_file (7
+5
+ex/com.example.exception.ResourceNotFoundExceptionu
+s
+O (Q5
+ex/com.example.exception.ResourceNotFoundException"__annotation*"
 
-__unknown_file (
-
-%13*
-1*ÿ
-1 (-86
-" (+
-%0java.util.HashMap"java.util.HashMapf
-d
- (-
-%1"java.util.HashMap#<init>()V*5
-
-__unknown_file (
-
-%0java.util.HashMapa
+__unknown_file (
+
+%3*
+1*û
+1	 (a
 _
- (.
-errorjava.util.Map"__id*5
-
-__unknown_file (
-
-%0java.util.HashMapÁ
-¾
- (+
-%2java.lang.String"__mapSet*4
-
-__unknown_file (
-
-errorjava.util.Map*'
-
-__unknown_file (	
-message*1
-
-__unknown_file (
-Validation failed¦£
-$ (92
-%3,org.springframework.validation.BindingResult"morg.springframework.validation.BindException#getBindingResult()Lorg/springframework/validation/BindingResult;*`
-
-__unknown_file (D
-B
-ex<org.springframework.web.bind.MethodArgumentNotValidException2getBindingResult()ÏÌ
-$ (J
-%4java.util.List"Forg.springframework.validation.Errors#getFieldErrors()Ljava/util/List;*P
-
-__unknown_file (4
-2
-%3,org.springframework.validation.BindingResult2getFieldErrors()¢Ÿ
-$ (S
-%5java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
-
-__unknown_file (
-
-%4java.util.List2stream()¯
-¬
- (R 
-%6java.util.stream.Collector"yjava.util.stream.Collectors#toMap(Ljava/util/function/Function;Ljava/util/function/Function;)Ljava/util/stream/Collector;*;
-
-__unknown_file ("
-java.util.stream.Collectors*"
+ (#)
+%0#org.springframework.http.HttpStatus"__id*"
 
 __unknown_file (
-""*"
+""¼¹
+% (4
+%1java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*S
 
-__unknown_file (
-""—”
-$ (S
-%7java.util.Map"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*;
+__unknown_file (7
+5
+ex/com.example.exception.ResourceNotFoundException2getMessage()Œ
+‰
+	 (5-
+%2'org.springframework.http.ResponseEntity"Šcom.example.GlobalExceptionHandler#error(Lorg/springframework/http/HttpStatus;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;*B
 
-__unknown_file (
-
-%5java.util.stream.Stream*>
+__unknown_file (&$
+"com.example.GlobalExceptionHandler*G
 
-__unknown_file ("
- 
-%6java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)c
-a
- (T
-fieldErrorsjava.util.Map"__id*1
-
-__unknown_file (
-
-%7java.util.Mapœ™
- (,
-%8java.lang.String"-java.lang.Object#toString()Ljava/lang/String;*:
-
-__unknown_file (
-
-fieldErrorsjava.util.Map2
-toString()Ã
-À
- (-
-%9java.lang.String"__mapSet*4
+__unknown_file (+
+)
+%0#org.springframework.http.HttpStatus*4
 
 __unknown_file (
 
-errorjava.util.Map*&
-
-__unknown_file (
-
-errors*4
-
-__unknown_file (
-
-%8java.lang.Stringb
-`
- (5*
-%10#org.springframework.http.HttpStatus"__id*"
-
-__unknown_file (
-""í
-ê
-	 (6:
-%113org.springframework.http.ResponseEntity$BodyBuilder"Žorg.springframework.http.ResponseEntity#status(Lorg/springframework/http/HttpStatusCode;)Lorg/springframework/http/ResponseEntity$BodyBuilder;*G
-
-__unknown_file (+")
-'org.springframework.http.ResponseEntity*H
-
-__unknown_file (,
-*
-%10#org.springframework.http.HttpStatusÞÛ
-	 (B.
-%12'org.springframework.http.ResponseEntity"uorg.springframework.http.ResponseEntity$BodyBuilder#body(Ljava/lang/Object;)Lorg/springframework/http/ResponseEntity;*X
-
-__unknown_file (<
-:
-%113org.springframework.http.ResponseEntity$BodyBuilder*4
-
-__unknown_file (
-
-errorjava.util.Map2body(Ljava/lang/Object;)"<
- (C0
-.
-%12'org.springframework.http.ResponseEntity:N
-C (eB
-ex<org.springframework.web.bind.MethodArgumentNotValidExceptionB&$
+%1java.lang.String";
+ (6/
+-
+%2'org.springframework.http.ResponseEntity:A
+5 (Q5
+ex/com.example.exception.ResourceNotFoundExceptionB&$
 "com.example.GlobalExceptionHandlerH

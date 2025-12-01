@@ -1,6 +1,5 @@
 package com.example;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -16,23 +15,22 @@ import com.example.exception.ResourceNotFoundException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex) {
-		Map<String, String> error = new HashMap<>();
-		error.put("message", "Validation failed");
+	private record ErrorResponse(String message, String errors) {
+	}
 
-		Map<String, String> fieldErrors = ex.getBindingResult().getFieldErrors().stream()
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<ErrorResponse> onValidation(MethodArgumentNotValidException ex) {
+
+		Map<String, String> validationMap = ex.getBindingResult().getFieldErrors().stream()
 				.collect(Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage));
 
-		error.put("errors", fieldErrors.toString());
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+		ErrorResponse er = new ErrorResponse("Validation failed", validationMap.toString());
+
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(er);
 	}
 
 	@ExceptionHandler(ResourceNotFoundException.class)
-	public ResponseEntity<Map<String, String>> handleResourceNotFound(ResourceNotFoundException ex) {
-		Map<String, String> error = new HashMap<>();
-		error.put("message", ex.getMessage());
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+	public ResponseEntity<Map<String, String>> onNotFound(ResourceNotFoundException ex) {
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", ex.getMessage()));
 	}
-
 }

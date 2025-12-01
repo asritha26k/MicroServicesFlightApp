@@ -1,7 +1,7 @@
 
-1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764571069765*java2.B¼
+1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764575808956*java2.B¼
 U
-PConfigServer/src/main/java/com/example/ConfigServer/ConfigServerApplication.java2
+PConfigServer/src/main/java/com/example/configserver/ConfigServerApplication.java2
 	
 type3
 	
@@ -14,9 +14,9 @@ module-key5
 
 package8
 *
-%ConfigServer:com.example.ConfigServer9
+%ConfigServer:com.example.configserver9
 6
-0com.example.ConfigServer.ConfigServerApplication11
+0com.example.configserver.ConfigServerApplication11
 
 class12
 
@@ -39,7 +39,7 @@ module-key5
 B
 <org.springframework.boot.autoconfigure.SpringBootApplication23
 Q
-Kcom.example.ConfigServer.ConfigServerApplication#main([Ljava/lang/String;)V25
+Kcom.example.configserver.ConfigServerApplication#main([Ljava/lang/String;)V25
 
 method26
 
@@ -74,15 +74,6 @@ references33
 
 5
 6jè
-
-34
-343519
-
-31
-313219
-
-22
-222319
 >
 108
 101112 *
@@ -96,11 +87,11 @@ references33
 15
 16
 
-17
-171819
+34
+343519
 
-28
-282919
+31
+313219
 B
 24<
 242526 *
@@ -112,7 +103,16 @@ B
 
 
 15
-27ró
+27
+
+22
+222319
+
+17
+171819
+
+28
+282919ró
 
 101720*
 1 (

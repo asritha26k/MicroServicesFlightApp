@@ -1,27 +1,26 @@
 package com.example.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.exception.ResourceNotFoundException;
 import com.example.model.Address;
 import com.example.model.Passenger;
-import com.example.repository.AddressRepository;
 import com.example.repository.PassengerRepository;
 import com.example.request.PassengerDetailsRequest;
 import com.example.response.PassengerDetailsResponse;
 
 @Service
 public class PassengerService {
-	@Autowired
-	PassengerRepository passengerRepository;
-	@Autowired
-	AddressRepository addressRepository;
 
-	public ResponseEntity<PassengerDetailsResponse> getPassengerDetailsService(@PathVariable int id)
+	private final PassengerRepository passengerRepository;
+
+	PassengerService(PassengerRepository passengerRepository) {
+		this.passengerRepository = passengerRepository;
+	}
+
+	public ResponseEntity<PassengerDetailsResponse> getPassengerDetailsService(int id)
 			throws ResourceNotFoundException {
 		Passenger passenger = passengerRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Passenger not found"));
@@ -43,10 +42,10 @@ public class PassengerService {
 	}
 
 	public ResponseEntity<String> deletePassengerService(int id) throws ResourceNotFoundException {
-		Passenger passenger = passengerRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Passenger not found"));
+		passengerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Passenger not found"));
+
 		passengerRepository.deleteById(id);
-		return new ResponseEntity<>("deleted", HttpStatus.OK);
+		return ResponseEntity.ok("deleted");
 	}
 
 	public ResponseEntity<Integer> getIdByEmailService(String email) throws ResourceNotFoundException {

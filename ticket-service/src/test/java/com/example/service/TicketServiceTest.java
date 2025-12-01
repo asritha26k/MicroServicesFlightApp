@@ -31,7 +31,7 @@ import com.example.response.FlightResponse;
 import com.example.response.PassengerDetailsResponse;
 import com.example.response.TicketResponse;
 
-public class TicketServiceTest {
+class TicketServiceTest {
 
 	@InjectMocks
 	private TicketService ticketService;
@@ -87,7 +87,7 @@ public class TicketServiceTest {
 	}
 
 	@Test
-	void testGetByPnrServiceSuccess() throws Exception {
+	void testGetByPnrServiceSuccess() {
 
 		Ticket ticket = Ticket.builder().pnr("ABC12345").seatNo("A1").flightId(1).passengerId(10).booked(true).build();
 
@@ -115,7 +115,7 @@ public class TicketServiceTest {
 	}
 
 	@Test
-	void testGetTicketsByEmailServiceSuccess() throws Exception {
+	void testGetTicketsByEmailServiceSuccess() {
 
 		when(passengerInterface.getIdByEmail("abc@gmail.com")).thenReturn(ResponseEntity.ok(10));
 

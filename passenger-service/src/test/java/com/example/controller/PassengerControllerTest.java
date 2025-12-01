@@ -33,7 +33,7 @@ import com.example.service.PassengerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
-public class PassengerControllerTest {
+class PassengerControllerTest {
 	MockMvc mockMvc;
 	@Mock
 	PassengerService passengerService;
@@ -58,21 +58,20 @@ public class PassengerControllerTest {
 
 	public PassengerDetailsResponse createResponse() {
 		Passenger passenger = createPassenger();
-		PassengerDetailsResponse response = PassengerDetailsResponse.builder().email(passenger.getEmail())
-				.name(passenger.getName()).phoneNum(passenger.getPhoneNumber()).build();
-		return response;
+		return PassengerDetailsResponse.builder().email(passenger.getEmail()).name(passenger.getName())
+				.phoneNum(passenger.getPhoneNumber()).build();
 	}
 
 	public PassengerDetailsRequest createRequest() {
 		Passenger passenger = createPassenger();
-		PassengerDetailsRequest request = PassengerDetailsRequest.builder().city(passenger.getAddress().getCity())
+		return PassengerDetailsRequest.builder().city(passenger.getAddress().getCity())
 				.houseNo(passenger.getAddress().getState()).email(passenger.getEmail()).name(passenger.getName())
 				.state(passenger.getAddress().getState()).phoneNumber(passenger.getPhoneNumber()).build();
-		return request;
+
 	}
 
 	@Test
-	public void testPassengerDetails() throws Exception {
+	void testPassengerDetails() throws Exception {
 
 		PassengerDetailsResponse response = createResponse();
 
@@ -84,7 +83,7 @@ public class PassengerControllerTest {
 	}
 
 	@Test
-	public void testGetIdByEmail() throws Exception {
+	void testGetIdByEmail() throws Exception {
 
 		Mockito.when(passengerService.getIdByEmailService(anyString()))
 				.thenReturn(ResponseEntity.status(HttpStatus.OK).body(1));
@@ -94,9 +93,8 @@ public class PassengerControllerTest {
 	}
 
 	@Test
-	public void testRegisterPassenger() throws Exception {
+	void testRegisterPassenger() throws Exception {
 
-		// Passenger passenger = createPassenger();
 		PassengerDetailsRequest request = createRequest();
 
 		Mockito.when(passengerService.registerPassengerService(any(PassengerDetailsRequest.class)))
@@ -108,7 +106,7 @@ public class PassengerControllerTest {
 	}
 
 	@Test
-	public void testDeletePassenger() throws Exception {
+	void testDeletePassenger() throws Exception {
 
 		Mockito.when(passengerService.deletePassengerService(anyInt()))
 				.thenReturn(ResponseEntity.status(HttpStatus.OK).body("deleted"));
