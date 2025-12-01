@@ -1,0 +1,229 @@
+
+1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764571070822*java2.BÈ
+J
+Eticket-service/src/main/java/com/example/response/TicketResponse.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+ticket-service6
+
+package8
+(
+#ticket-service:com.example.response9
+)
+#com.example.response.TicketResponse11
+
+class12
+
+access13
+
+public14
+
+simple-name15
+
+TicketResponse16
+
+lombok.Data18
+
+unknown19
+
+annotated by20
+
+
+uses21
+
+lombok.Builder23
+
+lombok.NoArgsConstructor25
+
+lombok.AllArgsConstructor27
+.
+(com.example.response.TicketResponse.name29
+
+field30
+
+private31
+
+
+name32
+/
+)com.example.response.TicketResponse.email34
+
+email35
+0
+*com.example.response.TicketResponse.origin37
+
+origin38
+5
+/com.example.response.TicketResponse.destination40
+
+destination41
+-
+'com.example.response.TicketResponse.pnr43
+	
+pnr44
+7
+1com.example.response.TicketResponse.departureTime46
+
+departureTime47
+5
+/com.example.response.TicketResponse.arrivalTime49
+
+arrivalTime50J#
+!
+1
+12
+
+3
+4
+
+5
+6Z
+
+7
+7982
+
+
+5
+6jì
+B
+28<
+282930 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+32
+>
+108
+101112 *
+1 (:7B
+
+
+13
+14
+
+
+15
+16
+B
+48<
+484930 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+50
+
+22
+222319
+B
+36<
+363730 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+38
+B
+45<
+454630 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+47
+
+17
+171819
+
+26
+262719
+B
+33<
+333430 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+35
+
+24
+242519
+B
+39<
+394030 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+41
+B
+42<
+424330 *
+1 (	210:7B
+
+
+13
+31
+
+
+15
+44rØ
+
+101720*
+1
+ 
+(
+
+101721*
+1
+ 
+(
+
+102220*
+1 (	
+
+102221*
+1 (	
+
+102420*
+1 (
+
+102421*
+1 (
+
+102620*
+1 (
+
+102621*
+1 (

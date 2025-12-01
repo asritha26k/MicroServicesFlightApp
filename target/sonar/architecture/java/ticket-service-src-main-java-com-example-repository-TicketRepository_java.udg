@@ -1,0 +1,138 @@
+
+1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764571070998*java2.B
+N
+Iticket-service/src/main/java/com/example/repository/TicketRepository.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+ticket-service6
+
+package8
+*
+%ticket-service:com.example.repository9
+-
+'com.example.repository.TicketRepository11
+
+	interface12
+
+access13
+
+public14
+
+simple-name15
+
+TicketRepository16
+;
+5org.springframework.data.jpa.repository.JpaRepository18
+
+unknown19
+
+
+implements20
+/
+)org.springframework.stereotype.Repository22
+
+annotated by23
+
+
+uses24
+
+com.example.model.Ticket26
+_
+Ycom.example.repository.TicketRepository#findByPnr(Ljava/lang/String;)Ljava/util/Optional;28
+
+method29
+
+	findByPnr30
+U
+Ocom.example.repository.TicketRepository#findAllByPassengerId(I)Ljava/util/List;32
+
+findAllByPassengerId33J#
+!
+1
+12
+
+3
+4
+
+5
+6Z
+
+7
+7982
+
+
+5
+6j„
+>
+108
+101112 *
+1 (":7B
+
+
+13
+14
+
+
+15
+16
+B
+27<
+272829 *
+1 (
+210:7B
+
+
+13
+14
+
+
+15
+30
+
+21
+212219
+
+25
+252619
+B
+31<
+313229 *
+1 (210:7B
+
+
+13
+14
+
+
+15
+33
+
+17
+171819r½
+
+101720*
+1+ (8
+
+102123*
+1 (
+
+102124*
+1 (
+
+101724*
+1+ (8
+
+102524*
+19 (?
+
+272524*
+1 (
+
+312524*
+1 (

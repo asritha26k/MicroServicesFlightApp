@@ -1,0 +1,7 @@
+organization=asritha26k
+projectKey=asritha26k_MicroServicesFlightApp
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.76937
+dashboardUrl=https://sonarcloud.io/dashboard?id=asritha26k_MicroServicesFlightApp
+ceTaskId=AZrYod8gWOPApFc2_WoZ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZrYod8gWOPApFc2_WoZ

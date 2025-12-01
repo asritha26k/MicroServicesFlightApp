@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,6 +20,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 
 import com.example.feign.FlightInterface;
 import com.example.feign.PassengerInterface;
@@ -42,6 +44,8 @@ public class TicketServiceTest {
 
 	@Mock
 	private FlightInterface flightInterface;
+	@Mock
+	private KafkaTemplate<String, Object> kafkaTemplate;
 
 	@BeforeEach
 	void init() {
@@ -56,6 +60,24 @@ public class TicketServiceTest {
 		req.setSeatNo("A1");
 
 		when(ticketRepository.save(any(Ticket.class))).thenAnswer(i -> i.getArguments()[0]);
+
+		ResponseEntity<String> response = ticketService.bookTicketService(req);
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertNotNull(response.getBody());
+		assertEquals(8, response.getBody().length()); // PNR is 8 chars
+	}
+
+	@Test
+	void testBookTicketServicee() {
+		BookTicketRequest req = new BookTicketRequest();
+		req.setFlightId(1);
+		req.setPassengerId(10);
+		req.setSeatNo("A1");
+
+		when(ticketRepository.save(any(Ticket.class))).thenAnswer(i -> i.getArguments()[0]);
+
+		when(kafkaTemplate.send(any(), any())).thenReturn(CompletableFuture.completedFuture(null));
 
 		ResponseEntity<String> response = ticketService.bookTicketService(req);
 

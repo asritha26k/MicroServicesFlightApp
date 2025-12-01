@@ -108,4 +108,20 @@ public class PassengerServiceTest {
 		});
 	}
 
+	@Test
+	public void testDeletePassengerService_Success() throws Exception {
+
+		Passenger passenger = Passenger.builder().passengerId(1).name("John").email("john@gmail.com")
+				.phoneNumber("12345").build();
+
+		Mockito.when(passengerRepository.findById(1)).thenReturn(Optional.of(passenger));
+
+		ResponseEntity<String> response = passengerService.deletePassengerService(1);
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals("deleted", response.getBody());
+
+		Mockito.verify(passengerRepository, times(1)).deleteById(1);
+	}
+
 }

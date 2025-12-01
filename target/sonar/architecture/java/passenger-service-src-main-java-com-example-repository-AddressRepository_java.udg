@@ -1,0 +1,97 @@
+
+1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764571068987*java2.B©
+R
+Mpassenger-service/src/main/java/com/example/repository/AddressRepository.java2
+	
+type3
+	
+MAIN4
+
+
+module-key5
+
+passenger-service6
+
+package8
+-
+(passenger-service:com.example.repository9
+.
+(com.example.repository.AddressRepository11
+
+	interface12
+
+access13
+
+public14
+
+simple-name15
+
+AddressRepository16
+;
+5org.springframework.data.jpa.repository.JpaRepository18
+
+unknown19
+
+
+implements20
+/
+)org.springframework.stereotype.Repository22
+
+annotated by23
+
+
+uses24
+
+com.example.model.Address26J#
+!
+1
+12
+
+3
+4
+
+5
+6Z
+
+7
+7982
+
+
+5
+6j|
+
+25
+252619
+
+21
+212219
+
+17
+171819
+>
+108
+101112 *
+1	 	(#:7B
+
+
+13
+14
+
+
+15
+16r‡
+
+101720*
+1	, 	(9
+
+102123*
+1 (
+
+102124*
+1 (
+
+101724*
+1	, 	(9
+
+102524*
+1	: 	(A
