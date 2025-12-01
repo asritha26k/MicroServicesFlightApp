@@ -1,140 +1,0 @@
-
-1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764575811549*java2.Bú
-H
-Cticket-service/src/main/java/com/example/feign/FlightInterface.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-ticket-service6
-
-package8
-%
- ticket-service:com.example.feign9
-'
-!com.example.feign.FlightInterface11
-
-	interface12
-
-access13
-
-public14
-
-simple-name15
-
-FlightInterface16
-5
-/org.springframework.cloud.openfeign.FeignClient18
-
-unknown19
-
-annotated by20
-
-
-uses21
-[
-Ucom.example.feign.FlightInterface#getByID(I)Lorg/springframework/http/ResponseEntity;23
-
-method24
-
-getByID25
--
-'org.springframework.http.ResponseEntity27
-
-returns28
-8
-2org.springframework.web.bind.annotation.GetMapping30
-)
-#com.example.response.FlightResponse32
-:
-4org.springframework.web.bind.annotation.PathVariable34J#
-!
-1
-12
-
-3
-4
-
-5
-6Z
-
-7
-7982
-
-
-5
-6jè
-B
-22<
-222324 *
-1 (210:7B
-
-
-13
-14
-
-
-15
-25
-
-33
-333419
->
-108
-101112 *
-1 (!:7B
-
-
-13
-14
-
-
-15
-16
-
-29
-293019
-
-26
-262719
-
-17
-171819
-
-31
-313219ró
-
-101720*
-1
- 
-(&
-
-101721*
-1
- 
-(
-
-222628*
-1	 (
-
-222920*
-1 (+
-
-222921*
-1 (
-
-222621*
-1	 (
-
-223121*
-1 (&
-
-223320*
-10 (=
-
-223321*
-11 (=

@@ -1,104 +1,0 @@
-
-1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764575808648*java2.BÏ
-S
-Nemail-service/src/test/java/com/example/demo/EmailServiceApplicationTests.java2
-	
-type3
-	
-TEST4
-
-
-module-key5
-
-email-service6
-
-package8
-#
-email-service:com.example.demo9
-3
--com.example.demo.EmailServiceApplicationTests11
-
-class12
-
-access13
-
-	protected14
-
-simple-name15
-"
-EmailServiceApplicationTests16
-:
-4org.springframework.boot.test.context.SpringBootTest18
-
-unknown19
-
-annotated by20
-
-
-uses21
-C
-=com.example.demo.EmailServiceApplicationTests#contextLoads()V23
-
-method24
-
-contextLoads25
- 
-org.junit.jupiter.api.Test27J#
-!
-1
-12
-
-3
-4
-
-5
-6Z
-
-7
-7982
-
-
-5
-6j¬
-
-26
-262719
-
-17
-171819
-B
-22<
-222324 *
-1	 	(210:7B
-
-
-13
-14
-
-
-15
-25
->
-108
-101112 *
-1 (#:7B
-
-
-13
-14
-
-
-15
-16rl
-
-101720*
-1 (
-
-101721*
-1 (
-
-222620*
-1	 	(
-
-222621*
-1	 	(

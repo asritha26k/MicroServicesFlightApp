@@ -1,297 +1,0 @@
-
-1.0!asritha26k_MicroServicesFlightAppJavaFrontend"1764575809924*java2.Bó
-?
-:flight-service/src/main/java/com/example/model/Flight.java2
-	
-type3
-	
-MAIN4
-
-
-module-key5
-
-flight-service6
-
-package8
-%
- flight-service:com.example.model9
-
-com.example.model.Flight11
-
-class12
-
-access13
-
-public14
-
-simple-name15
-
-Flight16
-
-lombok.Data18
-
-unknown19
-
-annotated by20
-
-
-uses21
-
-lombok.Builder23
-
-lombok.NoArgsConstructor25
-
-lombok.AllArgsConstructor27
- 
-jakarta.persistence.Entity29
-'
-!com.example.model.Flight.flightId31
-
-field32
-
-private33
-
-flightId34
-
-jakarta.persistence.Id36
-(
-"jakarta.persistence.GeneratedValue38
-(
-"jakarta.persistence.GenerationType40
-1
-+jakarta.persistence.GenerationType.SEQUENCE42
-
-
-references43
-&
- com.example.model.Flight.airline45
-
-airline46
-
-com.example.model.Airline48
-
-is type49
-%
-com.example.model.Flight.origin51
-
-origin52
-*
-$com.example.model.Flight.destination54
-
-destination55
-$
-com.example.model.Flight.price57
-
-price58
-,
-&com.example.model.Flight.departureTime60
-
-departureTime61
-*
-$com.example.model.Flight.arrivalTime63
-
-arrivalTime64J#
-!
-1
-12
-
-3
-4
-
-5
-6Z
-
-7
-7982
-
-
-5
-6jä
-B
-56<
-565732 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-58
-
-28
-282919
-B
-44<
-444532 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-46
-B
-50<
-505132 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-52
-
-35
-353619
-
-37
-373819
-B
-59<
-596032 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-61
-
-39
-394019
-
-22
-222319
-
-17
-171819
-B
-62<
-626332 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-64
-
-26
-262719
-B
-30<
-303132 *
-1 (210:7B
-
-
-13
-33
-
-
-15
-34
-B
-53<
-535432 *
-1 (	210:7B
-
-
-13
-33
-
-
-15
-55
->
-108
-101112 *
-1 (:7B
-
-
-13
-14
-
-
-15
-16
-
-41
-414219
-
-24
-242519
-
-47
-474819rœ
-
-101720*
-1 (
-
-101721*
-1 (
-
-102220*
-1 (	
-
-102221*
-1 (	
-
-102420*
-1 (
-
-102421*
-1 (
-
-102620*
-1 (
-
-102621*
-1 (
-
-102820*
-1 (
-
-102821*
-1 (
-
-303520*
-1 (
-
-303521*
-1 (
-
-303720*
-1 (5
-
-303721*
-1 (
-
-303921*
-1 (+
-
-303921*
-1, (4
-
-304143*
-1, (4
-
-444749*
-1
- (
-
-444721*
-1
- (
-
-444721*
-1 (
